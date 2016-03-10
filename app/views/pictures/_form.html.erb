@@ -1,25 +1,32 @@
-<%= form_for(@picture) do |f| %>
-  <% if @picture.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
-
-      <ul>
-      <% @picture.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="container fluid">
+  <br>
+  <%= link_to pictures_path, class:"btn btn-default btn-lg btn-block" do %>
+   <i class="glyphicon glyphicon-list-alt"></i><span class="badge pull-right"></span> Zurück ohne Speichern
+  <% end %>
+  <%= form_for(@picture) do |f| %>
+    <% if @picture.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+        <ul>
+        <% @picture.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="form-group">
+      <b>Dein Kommentar</b><br>
+      <%= f.text_area :comment, rows:5, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <b>Dein Bild</b><br>
+      <%= f.file_field :image, class:"form-control" %>
+    </div>
+    <%= f.number_field :user_id, class:"form-control hidden" %>
+    <div class="form-group">
+      <%= f.submit "Speichern", class:"form-control btn btn-info btn-lg btn-block" %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :comment %><br>
-    <%= f.text_area :comment %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

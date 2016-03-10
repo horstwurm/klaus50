@@ -1,0 +1,32 @@
+<div class="container-fluid">
+
+    <br>
+    <% platz = 1 %>
+    <% @winner.each do |w| %>
+        <div class="col-md-12">
+    	    <div class="thumbnail">
+    	       <div class="caption">
+    		    <blockquote>
+    		        <% stars = Voting.where("picture_id=?",w.pic).sum(:rating) %>
+    		        <% p = Picture.find(w.pic) %>
+    		        <h1><%= platz %>.Platz mit <%=stars %> Bewertungen für <%= p.user.name %></h1>
+        	        <% if !p.image_file_name %>
+                       <%= link_to image_tag("s_anonym.jpg", :size => "300x300") %>
+                    <% else %>
+                       <%= link_to (image_tag p.image(:big)) %>
+                    <% end %>
+                    <h2><%= p.comment %></h2>
+                    <br>
+                    <% if p.user != nil %>
+                      <address>
+                      <%= p.created_at.strftime("%d.%m.%Y um %H:%M Uhr") %>
+                      </address>
+                    <% end %>
+                    <% platz = platz + 1 %>
+                </blockquote>
+           </div>
+         </div>
+        </div>
+    <% end %>
+
+</div>

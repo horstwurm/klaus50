@@ -1,0 +1,2 @@
+module DiashowHelper
+end

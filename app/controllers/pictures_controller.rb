@@ -4,7 +4,7 @@ class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.json
   def index
-    @pictures = Picture.all
+    @pictures = Picture.all.order(created_at: :desc)
   end
 
   # GET /pictures/1
@@ -15,10 +15,15 @@ class PicturesController < ApplicationController
   # GET /pictures/new
   def new
     @picture = Picture.new
+    @picture.user_id = params[:user_id]
   end
 
   # GET /pictures/1/edit
   def edit
+  end
+
+  # GET /pictures/1/vote
+  def vote
   end
 
   # POST /pictures
@@ -69,6 +74,6 @@ class PicturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def picture_params
-      params.require(:picture).permit(:comment, :user_id)
+      params.require(:picture).permit(:comment, :user_id, :image)
     end
 end

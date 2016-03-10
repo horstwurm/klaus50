@@ -1,0 +1,8 @@
+<div class="container-fluid">
+  <h1>Happy Birthday (50) Klaus !</h1>
+  <% if controller_name != 'home' or action_name == 'winner' %>
+    <%= link_to home_index_path, class:"btn btn-default btn-lg btn-block" do %>
+       <i class="glyphicon glyphicon-home"></i> Home
+    <% end %>
+  <% end %>
+</div>

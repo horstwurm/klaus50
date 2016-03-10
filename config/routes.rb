@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :votings
   get 'home/index'
-
+  get 'home/winner'
+  get 'diashow/show'
   root 'home#index'
   
   resources :pictures

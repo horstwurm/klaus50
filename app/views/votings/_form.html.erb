@@ -1,0 +1,69 @@
+<div class="container fluid">
+  <br>
+  <%= link_to pictures_path, class:"btn btn-default btn-lg btn-block" do %>
+   <i class="glyphicon glyphicon-list-alt"></i><span class="badge pull-right"></span> Zurück ohne Speichern
+  <% end %>
+  <%= form_for(@voting) do |f| %>
+  <% if @voting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@voting.errors.count, "error") %> prohibited this voting from being saved:</h2>
+
+      <ul>
+      <% @voting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <br>
+    <div class="form-group">
+      <% @picture = Picture.find(@pic) %>
+      <b>Bild von <%= @picture.user.name %></b><br>
+      <% if !@picture.image_file_name %>
+        <%= image_tag("s_anonym.jpg", :size => "300x300") %>
+      <% else %>
+        <%= image_tag @picture.image(:medium) %>
+      <% end %>
+    </div>
+
+    <div class="form-inline">
+      <b>Deine Bewertung</b><br>
+
+      <%= f.radio_button :rating, 1, class:"form-control" %> 
+      <% 1.times do %>
+      <%= image_tag("star.jpg", :size => "50x50") %>
+      <% end %>
+      <br>
+
+      <%= f.radio_button :rating, 2, class:"form-control" %>
+      <% 2.times do %>
+      <%= image_tag("star.jpg", :size => "50x50") %>
+      <% end %>
+      <br>
+
+      <%= f.radio_button :rating, 3, class:"form-control" %>
+      <% 3.times do %>
+      <%= image_tag("star.jpg", :size => "50x50") %>
+      <% end %>
+      <br>
+
+      <%= f.radio_button :rating, 4, class:"form-control" %>
+      <% 4.times do %>
+      <%= image_tag("star.jpg", :size => "50x50") %>
+      <% end %>
+      <br>
+
+      <%= f.radio_button :rating, 5, class:"form-control" %>
+      <% 5.times do %>
+      <%= image_tag("star.jpg", :size => "50x50") %>
+      <% end %>
+      <br>
+    </div>
+    <br>
+    <%= f.number_field :user_id, class:"form-control hidden" %>
+    <%= f.number_field :picture_id, class:"form-control hidden" %>
+    <div class="form-group">
+      <%= f.submit "Bewertung Speichern", class:"form-control btn btn-info btn-lg btn-block" %>
+    </div>
+  <% end %>
+</div>

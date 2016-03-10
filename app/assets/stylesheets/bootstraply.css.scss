@@ -1,0 +1,29 @@
+body {
+    background-image: "//public/assets/images/bg.jpg";
+    background-color: #000000!important;
+    }
+
+h1 {
+    color: #FFFFFF!important;
+}
+
+.thumbnail {
+    background-color: #000000!important;
+}
+
+.jumbotron {
+    background-color: #000000!important;
+}
+
+blockquote {
+    background-color: #000000!important;
+}
+
+.btn-default {
+   color: #85CDE6!important;
+   background-color: #000000!important;
+   border-color: #000000!important;
+}
+
+@import "bootstrap-sprockets";
+@import "bootstrap";

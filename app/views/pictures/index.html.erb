@@ -1,29 +1,39 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Pictures</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Comment</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pictures.each do |picture| %>
-      <tr>
-        <td><%= picture.comment %></td>
-        <td><%= picture.user_id %></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="container-fluid">
+    <%= link_to new_picture_path(:user_id => 1), class:"btn btn-info btn-lg btn-block" do %>
+       <i class="glyphicon glyphicon-camera"></i> Neues Photo
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Picture', new_picture_path %>
+    <br>
+    <% @pictures.each do |p| %>
+        <div class="col-md-4">
+		  <div class="thumbnail">
+		        <% stars = Voting.where("picture_id=?",p.id).sum(:rating) %>
+	            <%= link_to new_voting_path(p.id, :user_id => 1, :picture_id => p.id), class:"btn btn-info btn-lg btn-block" do %>
+                   <i class="glyphicon glyphicon-thumbs-up"></i><span class="badge pull-right"><%= stars %></span> Bewerten
+                <% end %>
+		          <div class="caption">
+			         <blockquote>
+		        <% if !p.image_file_name %>
+                   <%= link_to image_tag("s_anonym.jpg", :size => "300x300") %>
+                <% else %>
+                   <%= link_to (image_tag p.image(:medium)) %>
+                <% end %>
+                <h2><%= p.comment %></h2>
+                <br>
+                <% if p.user != nil %>
+                  <address>
+                  <%= p.user.name + " am " + p.created_at.strftime("%d.%m.%Y um %H:%M Uhr") %>
+                  </address>
+                <% end %>
+              </blockquote>
+              <!--<%= link_to edit_picture_path(p.id), class:"btn btn-default btn-lg btn-block" do %>-->
+              <!--   <i class="glyphicon glyphicon-pencil"></i> Ändern-->
+              <!--<% end %>-->
+              <%= link_to p, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-default btn-lg btn-block" do %>
+                 <i class="glyphicon glyphicon-pencil"></i> Löschen
+              <% end %>
+            </div>
+           </div>
+         </div>
+      <% end %>
+</div>
