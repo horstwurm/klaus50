@@ -33,6 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # paperclip
 gem 'paperclip', '~>4.3'
+gem 'aws-sdk', '~>1.60.2'
 
 gem 'bootstrap-sass', '~> 3.3.1.0'
 
