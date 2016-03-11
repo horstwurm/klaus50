@@ -10,7 +10,7 @@ class UserMailer < ApplicationMailer
     @user = user
     @pw = pw
     mail to: @user.email, 
-    bcc: "wurmhorst63@gmail.comhorst",
+    bcc: "wurmhorst63@gmail.com",
     subject: "Bestätigung Passwortänderung für Klaus wird 50!"
   end
 end

@@ -1,6 +1,13 @@
+$bgc: #000000;
+$fgc: #9494b8;
+
+$fgc: #b3ffd9;
+$fgc: #ebccff;
+$fgc: #b3d9ff;
+
 body {
     background-image: "//public/assets/images/bg.jpg";
-    background-color: #000000!important;
+    background-color: $bgc!important;
     }
 
 h1 {
@@ -8,21 +15,53 @@ h1 {
 }
 
 .thumbnail {
-    background-color: #000000!important;
+    background-color: $bgc!important;
+    color: $fgc!important;
 }
 
 .jumbotron {
-    background-color: #000000!important;
+    background-color: $bgc!important;
+    color: $fgc!important;
 }
 
 blockquote {
-    background-color: #000000!important;
+    background-color: $bgc!important;
+    color: $fgc!important;
 }
 
 .btn-default {
-   color: #85CDE6!important;
-   background-color: #000000!important;
-   border-color: #000000!important;
+   color: $fgc!important;
+   background-color: $bgc!important;
+   border-color: $fgc!important;
+}
+
+.btn-default:hover {
+   color: $bgc!important;
+   background-color: $fgc!important;
+   border-color: $fgc!important;
+}
+
+.btn-primary {
+   color: $fgc!important;
+   background-color: $bgc!important;
+   border-color: $fgc!important;
+}
+
+.btn-warning {
+   color: $fgc!important;
+   background-color: $bgc!important;
+   border-color: $fgc!important;
+}
+
+.btn-info {
+   color: $bgc!important;
+   background-color: $fgc!important;
+   border-color: $fgc!important;
+}
+.btn-info:hover {
+   color: $fgc!important;
+   background-color: $bgc!important;
+   border-color: $fgc!important;
 }
 
 @import "bootstrap-sprockets";

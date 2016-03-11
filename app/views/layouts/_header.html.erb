@@ -40,7 +40,8 @@
 	                   <li><%= link_to "Abmelden", destroy_user_session_path, method: :delete %></li>
 	                <% else %>
 	                   <li><%= link_to "Anmelden", new_user_session_path %></li>
-	                   <li><%= link_to "Passwort vergessen", home_pw_reset_path %></li>
+	                   <li><%= link_to "Neues Passwort", home_pw_reset_path %></li>
+	                   <!--<li><%= link_to "Passwort ändern", edit_user_password_path %></li>-->
 	                   <li><%= link_to "Neuer Benutzer", new_user_registration_path %></li>
 	                <% end %>
 				</ul>

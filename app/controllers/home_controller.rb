@@ -13,6 +13,7 @@ class HomeController < ApplicationController
         new_pw = @u.name + new_pw
         @u.password = new_pw
         @u.save
+        puts "setting PW to "+new_pw
         UserMailer.signin_confirmation(@u, new_pw).deliver_now
       end
     end
