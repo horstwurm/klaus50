@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+
+  devise_for :users, :controllers => { registrations: 'registrations' }
   resources :votings
+  
+  root 'home#index'
+
   get 'home/index'
   get 'home/winner'
+  get 'home/pw_reset'
+  post 'home/pw_reset'
   get 'diashow/show'
-  root 'home#index'
   
   resources :pictures
   resources :users

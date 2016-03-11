@@ -1,0 +1,16 @@
+
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1>Passwort ändern</h1>
+    <br>
+    <%= form_tag (home_pw_reset_path method: :post) do %>
+      <div class="field">
+        <%= label_tag "Email" %><br />
+        <%= text_field_tag :email, @email, autofocus: true ,class:"form-control" %>
+      </div>
+      <div class="actions">
+        <%= submit_tag "sende neues Passwort peer eMail", class:"form-control btn btn-primary btn-lg" %>
+      </div>
+    <% end %>
+  </div>          
+</div>
