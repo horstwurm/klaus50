@@ -5,8 +5,20 @@ $fgc: #b3ffd9;
 $fgc: #ebccff;
 $fgc: #b3d9ff;
 
+table {
+    background-color: $bgc!important;
+    color: $fgc!important;
+    border-color: $fgc!important;
+}
+
+thead {
+    background-color: $fgc!important;
+    color: $bgc!important;
+    border-color: $bgc!important;
+}
+
 body {
-    background-image: "//public/assets/images/bg.jpg";
+    background-image: "bg.jpg";
     background-color: $bgc!important;
     }
 

@@ -1,33 +1,43 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<div class="container fluid">
+  <div class="jumbotron">
+    <br>
+    <%= link_to users_path, class:"btn btn-default btn-lg btn-block" do %>
+     <i class="glyphicon glyphicon-list-alt"></i><span class="badge pull-right"></span> Zurück ohne Speichern
+    <% end %>
+    <br>
+    <%= form_for(@user) do |f| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    
+          <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    
+      <div class=""form-group"">
+        <%= f.label :email %><br>
+        <%= f.text_field :email, :readonly => true, class:"form-control" %>
+      </div>
+      <div class=""form-group"">
+        <%= f.label :password %><br>
+        <%= f.text_field :password, class:"form-control" %>
+      </div>
+      <div class=""form-group"">
+        <%= f.label :lastname %><br>
+        <%= f.text_field :lastname, class:"form-control" %>
+      </div>
+      <div class=""form-group"">
+        <%= f.label :name %><br>
+        <%= f.text_field :name, class:"form-control" %>
+      </div>
+      <br>
+      <div class="actions">
+        <%= f.submit "Speichern", class:"btn btn-info btn-lg btn-block" %>
+      </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :lastname %><br>
-    <%= f.text_field :lastname %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

@@ -26,7 +26,7 @@
             <% end %>
           </li>
           <li>
-            <%= link_to do %>
+            <%= link_to users_path do %>
                <i class="glyphicon glyphicon-user"></i><span class="badge pull-right"></span> <%= current_user.name + " " + current_user.lastname %>
             <% end %>
 	      	</li>
@@ -38,6 +38,9 @@
 				<ul class="dropdown-menu">
 	                <% if user_signed_in? %>
 	                   <li><%= link_to "Abmelden", destroy_user_session_path, method: :delete %></li>
+	                   <!--<% if current_user.email == 'horst.wurm@bluewin.ch' %>-->
+	                   <!--		<li><%= link_to "Benutzer", users_path %></li>-->
+	                   <!--<% end %>-->
 	                <% else %>
 	                   <li><%= link_to "Anmelden", new_user_session_path %></li>
 	                   <li><%= link_to "Neues Passwort", home_pw_reset_path %></li>

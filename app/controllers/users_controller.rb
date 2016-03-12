@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  def pw_reset
+  end
+
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.all.order(:lastname)
   end
 
   # GET /users/1
