@@ -1,9 +1,8 @@
 <div class="container fluid">
   <div class="jumbotron">
   <br>
-  <%= link_to pictures_path, class:"btn btn-default btn-lg btn-block" do %>
-   <i class="glyphicon glyphicon-list-alt"></i><span class="badge pull-right"></span> Zurück ohne Speichern
-  <% end %>
+
+  <br>
   <%= form_for(@picture) do |f| %>
     <% if @picture.errors.any? %>
       <div id="error_explanation">
@@ -25,8 +24,11 @@
       <%= f.file_field :image, class:"form-control" %>
     </div>
     <%= f.number_field :user_id, class:"form-control hidden" %>
-    <div class="form-group">
-      <%= f.submit "Speichern", class:"form-control btn btn-info btn-lg btn-block" %>
+    <div>
+      <%= link_to "Zurück", pictures_path, class:"btn btn-default btn-lg" %>
+      <%= f.submit "Speichern",  class:"btn btn-warning btn-lg" do %>
+       <i class="glyphicon glyphicon-hdd"></i><span class="badge pull-right"></span> Zurück ohne Speichern
+      <% end %>
     </div>
   <% end %>
   </div>

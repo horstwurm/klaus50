@@ -1,10 +1,5 @@
 <div class="container fluid">
   <div class="jumbotron">
-    <br>
-    <%= link_to users_path, class:"btn btn-default btn-lg btn-block" do %>
-     <i class="glyphicon glyphicon-list-alt"></i><span class="badge pull-right"></span> Zurück ohne Speichern
-    <% end %>
-    <br>
     <%= form_for(@user) do |f| %>
       <% if @user.errors.any? %>
         <div id="error_explanation">
@@ -18,25 +13,26 @@
         </div>
       <% end %>
     
-      <div class=""form-group"">
+      <div class="form-group>
         <%= f.label :email %><br>
         <%= f.text_field :email, :readonly => true, class:"form-control" %>
       </div>
-      <div class=""form-group"">
+      <div class="form-group>
         <%= f.label :password %><br>
         <%= f.text_field :password, class:"form-control" %>
       </div>
-      <div class=""form-group"">
+      <div class="form-group>
         <%= f.label :lastname %><br>
         <%= f.text_field :lastname, class:"form-control" %>
       </div>
-      <div class=""form-group"">
+      <div class="form-group>
         <%= f.label :name %><br>
         <%= f.text_field :name, class:"form-control" %>
       </div>
       <br>
-      <div class="actions">
-        <%= f.submit "Speichern", class:"btn btn-info btn-lg btn-block" %>
+      <div>
+        <%= link_to "Zurück", users_path, class:"btn btn-default btn-lg" %>
+        <%= f.submit "Speichern", class:"btn btn-warning btn-lg" %>
       </div>
     <% end %>
   </div>

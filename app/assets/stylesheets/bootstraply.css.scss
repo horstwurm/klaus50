@@ -4,77 +4,169 @@ $fgc: #9494b8;
 $fgc: #b3ffd9;
 $fgc: #ebccff;
 $fgc: #b3d9ff;
+$fgc: #4dffb8;
 
+$warning_bg: #ff6666;
+$warning_fg: #000000;
+
+$primary_bg: #4db8ff;
+$primary_fg: #000000;
+
+$default_bg: #4dffb8;
+$default_fg: #000000;
+
+$info_bg: #9999ff;
+$info_fg: #000000;
+
+$text_fg: #52527a;
+$text_bg: #000000;
+
+textarea, input#picture_comment {
+    background-color: $bgc!important;
+    color: $text_fg!important;
+    border-color: $text_fg!important;
+}
+textarea, input#picture_comment:focus {
+    border-color: $default_bg!important;
+}
+input#picture_image {
+    background-color: $bgc!important;
+    color: $text_fg!important;
+    border-color: $text_fg!important;
+}
+input#email {
+    background-color: $bgc!important;
+    color: $text_fg!important;
+    border-color: $text_fg!important;
+}
+input#email:focus {
+    border-color: $default_bg!important;
+}
+input#user_email {
+   background-color: $bgc!important;
+    color: $text_fg!important;
+    border-color: $text_fg!important;
+}
+input#user_email:focus {
+    border-color: $default_bg!important;
+}
+input#user_password {
+    background-color: $bgc!important;
+    color: $text_fg!important;
+    border-color: $text_fg!important;
+}
+input#user_password:focus {
+    background-color: $bgc!important;
+    color: $text_fg!important;
+    border-color: $default_bg!important;
+}
+input#user_password_confirmation {
+    background-color: $bgc!important;
+    color: $text_fg!important;
+    border-color: $text_fg!important;
+}
+input#user_password_confirmation:focus {
+    background-color: $bgc!important;
+    color: $text_fg!important;
+    border-color: $default_bg!important;
+}
+input#user_lastname {
+    background-color: $bgc!important;
+    color: $text_fg!important;
+    border-color: $text_fg!important;
+}
+input#user_lastname:focus {
+    background-color: $bgc!important;
+    color: $text_fg!important;
+    border-color: $default_bg!important;
+}
+input#user_name {
+    background-color: $bgc!important;
+    color: $text_fg!important;
+    border-color: $text_fg!important;
+}
+input#user_name:focus {
+    background-color: $bgc!important;
+    color: $text_fg!important;
+    border-color: $default_bg!important;
+}
 table {
     background-color: $bgc!important;
-    color: $fgc!important;
+    color: $text_fg!important;
     border-color: $fgc!important;
 }
-
 thead {
-    background-color: $fgc!important;
-    color: $bgc!important;
-    border-color: $bgc!important;
+    background-color: $text_fg!important;
+    color: $text_bg!important;
+    border-color: $text_fg!important;
 }
-
 body {
-    background-image: "bg.jpg";
+    background-image: image-url("klaus2.jpg")!important;
     background-color: $bgc!important;
     }
-
 h1 {
-    color: #FFFFFF!important;
+    color: $text_fg!important;
 }
-
 .thumbnail {
     background-color: $bgc!important;
-    color: $fgc!important;
-}
-
+    color: $text_fg!important;
+    border-color: $text_fg!important;}
+.caption {
+    background-color: $bgc!important;
+    color: $text_fg!important;
+    border-color: $text_fg!important;}
 .jumbotron {
     background-color: $bgc!important;
-    color: $fgc!important;
+    color: $text_fg!important;
 }
-
 blockquote {
     background-color: $bgc!important;
-    color: $fgc!important;
+    color: $text_fg!important;
 }
-
 .btn-default {
-   color: $fgc!important;
-   background-color: $bgc!important;
-   border-color: $fgc!important;
+   color: $default_fg!important;
+   background-color: $default_bg!important;
+   border-color: $default_bg!important;
 }
 
-.btn-default:hover {
-   color: $bgc!important;
-   background-color: $fgc!important;
-   border-color: $fgc!important;
-}
+// .btn-default:hover {
+//   color: $default_bg!important;
+//   background-color: $default_fg!important;
+//   border-color: $default_fg!important;
+// }
 
 .btn-primary {
-   color: $fgc!important;
-   background-color: $bgc!important;
-   border-color: $fgc!important;
+   color: $primary_fg!important;
+   background-color: $primary_bg!important;
+   border-color: $primary_bg!important;
 }
+// .btn-primary:hover {
+//   color: $primary_bg!important;
+//   background-color: $primary_fg!important;
+//   border-color: $primary_fg!important;
+// }
 
 .btn-warning {
-   color: $fgc!important;
-   background-color: $bgc!important;
-   border-color: $fgc!important;
+   color: $warning_fg!important;
+   background-color: $warning_bg!important;
+   border-color: $warning_bg!important;
 }
+// .btn-warning:hover {
+//   color: $warning_bg!important;
+//   background-color: $warning_fg!important;
+//   border-color: $warning_fg!important;
+// }
 
 .btn-info {
-   color: $bgc!important;
-   background-color: $fgc!important;
-   border-color: $fgc!important;
+   color: $info_fg!important;
+   background-color: $info_bg!important;
+   border-color: $info_bg!important;
 }
-.btn-info:hover {
-   color: $fgc!important;
-   background-color: $bgc!important;
-   border-color: $fgc!important;
-}
+// .btn-info:hover {
+//   color: $info_bg!important;
+//   background-color: $info_fg!important;
+//   border-color: $info_fg!important;
+// }
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
