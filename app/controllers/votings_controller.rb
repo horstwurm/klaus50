@@ -19,7 +19,7 @@ class VotingsController < ApplicationController
       @voting = Voting.new
       @voting.user_id = params[:user_id]
       @voting.picture_id = params[:picture_id]
-      @voting.rating = 2
+      @voting.rating = 3
     end
     @pic = params[:picture_id]  
   end
