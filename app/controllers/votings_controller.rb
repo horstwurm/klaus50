@@ -35,7 +35,7 @@ class VotingsController < ApplicationController
 
     respond_to do |format|
       if @voting.save
-        format.html { redirect_to pictures_path, notice: 'Voting was successfully created.' }
+        format.html { redirect_to pictures_path, notice: 'Rating erfolgreich erstellt.' }
         format.json { render :show, status: :created, location: @voting }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class VotingsController < ApplicationController
   def update
     respond_to do |format|
       if @voting.update(voting_params)
-        format.html { redirect_to pictures_path, notice: 'Voting was successfully updated.' }
+        format.html { redirect_to pictures_path, notice: 'Rating erfolgreich geändert.' }
         format.json { render :show, status: :ok, location: @voting }
       else
         format.html { render :edit }

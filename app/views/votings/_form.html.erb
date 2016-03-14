@@ -1,8 +1,10 @@
 <div class="container fluid">
+  <div class="jumbotron">
+  <h1>Deine Bewertung</h1>
   <%= form_for(@voting) do |f| %>
   <% if @voting.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@voting.errors.count, "error") %> prohibited this voting from being saved:</h2>
+      <h2><%= pluralize(@voting.errors.count, "Fehler") %> kann nicht speichern</h2>
 
       <ul>
       <% @voting.errors.full_messages.each do |message| %>
@@ -16,9 +18,9 @@
       <% @picture = Picture.find(@pic) %>
       <b>Bild von <%= @picture.user.name %></b><br>
       <% if !@picture.image_file_name %>
-        <%= image_tag("s_anonym.jpg", :size => "300x300") %>
+        <%= image_tag("ooops.jpg", :size => "300x300") %>
       <% else %>
-        <%= image_tag @picture.image(:medium) %>
+        <%= image_tag @picture.image(:small) %>
       <% end %>
     </div>
 
@@ -63,4 +65,5 @@
       <%= f.submit "Speichern", class:"btn btn-default btn-lg" %>
     </div>
   <% end %>
+  </div>
 </div>

@@ -14,8 +14,12 @@ class PicturesController < ApplicationController
 
   # GET /pictures/new
   def new
-    @picture = Picture.new
-    @picture.user_id = params[:user_id]
+    if Picture.where("user_id=?", current_user.id).count <= 4
+      @picture = Picture.new
+      @picture.user_id = params[:user_id]
+    else
+      redirect_to pictures_path, notice: "Maximale Anzahl Bilder pro Benutzer ist 5 (ggf. löschen) !"
+    end
   end
 
   # GET /pictures/1/edit
@@ -33,7 +37,7 @@ class PicturesController < ApplicationController
 
     respond_to do |format|
       if @picture.save
-        format.html { redirect_to pictures_path, notice: 'Picture was successfully created.' }
+        format.html { redirect_to pictures_path, notice: 'Photo erfolgreich gespeichert.' }
         format.json { render :show, status: :created, location: @picture }
       else
         format.html { render :new }
@@ -47,7 +51,7 @@ class PicturesController < ApplicationController
   def update
     respond_to do |format|
       if @picture.update(picture_params)
-        format.html { redirect_to pictures_path, notice: 'Picture was successfully updated.' }
+        format.html { redirect_to pictures_path, notice: 'Photo erfolgreich geändert.' }
         format.json { render :show, status: :ok, location: @picture }
       else
         format.html { render :edit }
@@ -61,7 +65,7 @@ class PicturesController < ApplicationController
   def destroy
     @picture.destroy
     respond_to do |format|
-      format.html { redirect_to pictures_path, notice: 'Picture was successfully destroyed.' }
+      format.html { redirect_to pictures_path, notice: 'Photo erfolgreich gelöscht.' }
       format.json { head :no_content }
     end
   end

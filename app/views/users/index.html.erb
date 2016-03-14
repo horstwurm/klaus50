@@ -19,7 +19,7 @@
               <td><%= user.email %></td>
               <td><%= user.lastname %></td>
               <td><%= user.name %></td>
-              <td><%= Picture.where("user_id=?", user.id).count %></td>
+              <td><%= Picture.where("user_id=?", user.id).count %>/5</td>
               <% if user.id == current_user.id or current_user.email == "horst.wurm@bluewin.ch" %>
                 <td>
                 <%= link_to edit_user_path(user.id), class:"btn btn-default" do %>

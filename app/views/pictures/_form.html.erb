@@ -1,12 +1,10 @@
 <div class="container fluid">
   <div class="jumbotron">
-  <br>
-
-  <br>
+  <h1>Dein Photo</h1>
   <%= form_for(@picture) do |f| %>
     <% if @picture.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+        <h2><%= pluralize(@picture.errors.count, "Fehler") %> kann nicht speichern:</h2>
         <ul>
         <% @picture.errors.full_messages.each do |message| %>
           <li><%= message %></li>
