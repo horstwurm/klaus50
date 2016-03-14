@@ -10,9 +10,9 @@
 		  <div class="thumbnail">
 		      <div class="caption">
 		        <% if !p.image_file_name %>
-                   <%= image_tag("s_anonym.jpg", :size => "300x300") %>
+                   <%= image_tag("ooops.jpg", class:"img-responsive img-rounded") %>
                 <% else %>
-                   <%= image_tag p.image(:medium) %>
+                   <%= image_tag(p.image, class:"img-responsive img-rounded") %>
                 <% end %>
                 <br>
                 <h2><%= p.comment %></h2>
@@ -26,12 +26,22 @@
                   <%= link_to edit_picture_path(p.id), class:"btn btn-default btn-lg btn-block" do %>
                      <i class="glyphicon glyphicon-pencil"></i> Ändern
                   <% end %>
-                  <%= link_to p, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-warning btn-lg btn-block" do %>
-                     <i class="glyphicon glyphicon-pencil"></i> Löschen
+                  <%= link_to p, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-default btn-lg btn-block" do %>
+                     <i class="glyphicon glyphicon-trash"></i> Löschen
+                  <% end %>
+                  <% stars = Voting.where("picture_id=?",p.id).sum(:rating) %>
+                    <%= link_to new_voting_path(p.id, :user_id => current_user.id, :picture_id => p.id), disabled: :true, class:"btn btn-default btn-lg btn-block" do %>
+                        <i class="glyphicon glyphicon-thumbs-up"></i><span class="badge pull-right"><%= stars %></span> Bewerten
                   <% end %>
                 <% else %>
+                  <%= link_to edit_picture_path(p.id), disabled: :true, class:"btn btn-default btn-lg btn-block" do %>
+                     <i class="glyphicon glyphicon-pencil"></i> Ändern
+                  <% end %>
+                  <%= link_to p, method: :delete, data: { confirm: 'Are you sure?' }, disabled: :true, class:"btn btn-default btn-lg btn-block" do %>
+                     <i class="glyphicon glyphicon-trash"></i> Löschen
+                  <% end %>
                     <% stars = Voting.where("picture_id=?",p.id).sum(:rating) %>
-                    <%= link_to new_voting_path(p.id, :user_id => current_user.id, :picture_id => p.id), class:"btn btn-info btn-lg btn-block" do %>
+                    <%= link_to new_voting_path(p.id, :user_id => current_user.id, :picture_id => p.id), class:"btn btn-default btn-lg btn-block" do %>
                         <i class="glyphicon glyphicon-thumbs-up"></i><span class="badge pull-right"><%= stars %></span> Bewerten
                     <% end %>
                 <% end %>

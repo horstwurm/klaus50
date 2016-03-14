@@ -12,7 +12,8 @@ $warning_fg: #000000;
 $primary_bg: #4db8ff;
 $primary_fg: #000000;
 
-$default_bg: #4dffb8;
+$default_bg: #4dffb8; 
+$default_bg: #4db8ff;
 $default_fg: #000000;
 
 $info_bg: #9999ff;
@@ -20,6 +21,12 @@ $info_fg: #000000;
 
 $text_fg: #52527a;
 $text_bg: #000000;
+
+.alert-warning {
+    background-color: $bgc!important;
+    color: $warning_bg!important;
+    border-color: $bgc!important;
+}
 
 textarea, input#picture_comment {
     background-color: $bgc!important;
@@ -101,7 +108,7 @@ thead {
     border-color: $text_fg!important;
 }
 body {
-    background-image: image-url("klaus2.jpg")!important;
+    // background-image: image-url("klausi.jpg")!important;
     background-color: $bgc!important;
     }
 h1 {
@@ -124,16 +131,16 @@ blockquote {
     color: $text_fg!important;
 }
 .btn-default {
-   color: $default_fg!important;
-   background-color: $default_bg!important;
+   color: $default_bg!important;
+   background-color: $default_fg!important;
    border-color: $default_bg!important;
 }
 
-// .btn-default:hover {
-//   color: $default_bg!important;
-//   background-color: $default_fg!important;
-//   border-color: $default_fg!important;
-// }
+.btn-default:hover {
+  color: $default_fg!important;
+  background-color: $default_bg!important;
+  border-color: $default_fg!important;
+}
 
 .btn-primary {
    color: $primary_fg!important;

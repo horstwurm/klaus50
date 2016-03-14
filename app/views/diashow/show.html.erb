@@ -15,9 +15,9 @@
             <div class="item">
         <% end %>
     	    <% if !p.image_file_name %>
-                <%= image_tag("s_anonym.jpg", :size => "300x300") %>
+                <%= image_tag("s_anonym.jpg", class:"img-responsive img-rounded") %>
             <% else %>
-                <%= image_tag p.image(:big) %>
+                <%= image_tag(p.image, :size => :big, class:"img-responsive img-rounded") %>
             <% end %>
             <div class="carousel-caption">
                 <h1><%= p.user.name %> <em>"<%= p.comment %>"</em></h3>

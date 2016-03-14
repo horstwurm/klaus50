@@ -1,7 +1,193 @@
 @charset "UTF-8";
-/* line 2, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
-.body .body {
-  background: "bg.jpg";
+/* line 25, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+.alert-warning {
+  background-color: #000000 !important;
+  color: #ff6666 !important;
+  border-color: #000000 !important;
+}
+
+/* line 31, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+textarea, input#picture_comment {
+  background-color: #000000 !important;
+  color: #52527a !important;
+  border-color: #52527a !important;
+}
+
+/* line 36, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+textarea, input#picture_comment:focus {
+  border-color: #4db8ff !important;
+}
+
+/* line 39, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+input#picture_image {
+  background-color: #000000 !important;
+  color: #52527a !important;
+  border-color: #52527a !important;
+}
+
+/* line 44, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+input#email {
+  background-color: #000000 !important;
+  color: #52527a !important;
+  border-color: #52527a !important;
+}
+
+/* line 49, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+input#email:focus {
+  border-color: #4db8ff !important;
+}
+
+/* line 52, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+input#user_email {
+  background-color: #000000 !important;
+  color: #52527a !important;
+  border-color: #52527a !important;
+}
+
+/* line 57, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+input#user_email:focus {
+  border-color: #4db8ff !important;
+}
+
+/* line 60, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+input#user_password {
+  background-color: #000000 !important;
+  color: #52527a !important;
+  border-color: #52527a !important;
+}
+
+/* line 65, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+input#user_password:focus {
+  background-color: #000000 !important;
+  color: #52527a !important;
+  border-color: #4db8ff !important;
+}
+
+/* line 70, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+input#user_password_confirmation {
+  background-color: #000000 !important;
+  color: #52527a !important;
+  border-color: #52527a !important;
+}
+
+/* line 75, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+input#user_password_confirmation:focus {
+  background-color: #000000 !important;
+  color: #52527a !important;
+  border-color: #4db8ff !important;
+}
+
+/* line 80, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+input#user_lastname {
+  background-color: #000000 !important;
+  color: #52527a !important;
+  border-color: #52527a !important;
+}
+
+/* line 85, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+input#user_lastname:focus {
+  background-color: #000000 !important;
+  color: #52527a !important;
+  border-color: #4db8ff !important;
+}
+
+/* line 90, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+input#user_name {
+  background-color: #000000 !important;
+  color: #52527a !important;
+  border-color: #52527a !important;
+}
+
+/* line 95, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+input#user_name:focus {
+  background-color: #000000 !important;
+  color: #52527a !important;
+  border-color: #4db8ff !important;
+}
+
+/* line 100, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+table {
+  background-color: #000000 !important;
+  color: #52527a !important;
+  border-color: #4dffb8 !important;
+}
+
+/* line 105, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+thead {
+  background-color: #52527a !important;
+  color: #000000 !important;
+  border-color: #52527a !important;
+}
+
+/* line 110, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+body {
+  background-color: #000000 !important;
+}
+
+/* line 114, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+h1 {
+  color: #52527a !important;
+}
+
+/* line 117, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+.thumbnail {
+  background-color: #000000 !important;
+  color: #52527a !important;
+  border-color: #52527a !important;
+}
+
+/* line 121, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+.caption {
+  background-color: #000000 !important;
+  color: #52527a !important;
+  border-color: #52527a !important;
+}
+
+/* line 125, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+.jumbotron {
+  background-color: #000000 !important;
+  color: #52527a !important;
+}
+
+/* line 129, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+blockquote {
+  background-color: #000000 !important;
+  color: #52527a !important;
+}
+
+/* line 133, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+.btn-default {
+  color: #4db8ff !important;
+  background-color: #000000 !important;
+  border-color: #4db8ff !important;
+}
+
+/* line 139, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+.btn-default:hover {
+  color: #000000 !important;
+  background-color: #4db8ff !important;
+  border-color: #000000 !important;
+}
+
+/* line 145, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+.btn-primary {
+  color: #000000 !important;
+  background-color: #4db8ff !important;
+  border-color: #4db8ff !important;
+}
+
+/* line 156, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+.btn-warning {
+  color: #000000 !important;
+  background-color: #ff6666 !important;
+  border-color: #ff6666 !important;
+}
+
+/* line 167, /home/ubuntu/workspace/app/assets/stylesheets/bootstraply.css.scss */
+.btn-info {
+  color: #000000 !important;
+  background-color: #9999ff !important;
+  border-color: #9999ff !important;
 }
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
