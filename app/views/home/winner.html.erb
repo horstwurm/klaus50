@@ -1,5 +1,5 @@
 <div class="container-fluid">
-
+    <h1>Rangliste Klaus wird 50!</h1>
     <br>
     <% platz = 1 %>
     <% @winner.each do |w| %>
@@ -9,9 +9,9 @@
     		    <blockquote>
     		        <% stars = Voting.where("picture_id=?",w.pic).sum(:rating) %>
     		        <% p = Picture.find(w.pic) %>
-    		        <h1><%= platz %>.Platz mit <%=stars %> Bewertungen für <%= p.user.name %></h1>
+    		        <h2><%= platz %>.Platz mit <%=stars %> Bewertungen für <%= p.user.name %></h2>
         	        <% if !p.image_file_name %>
-                       <%= link_to image_tag("s_anonym.jpg", :size => "300x300") %>
+                       <%= link_to image_tag("ooops", :size => "300x300") %>
                     <% else %>
                        <%= link_to (image_tag p.image(:big)) %>
                     <% end %>
