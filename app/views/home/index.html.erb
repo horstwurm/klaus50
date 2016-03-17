@@ -18,7 +18,7 @@
                     <%= link_to home_winner_path, class:"btn btn-default btn-lg btn-block" do %>
                        <i class="glyphicon glyphicon-star-empty"></i><span class="badge pull-right"></span> Rangliste
                     <% end %>
-                    <%= link_to edit_user_path(current_user.id), class:"btn btn-default btn-lg btn-block" do %>
+                    <%= link_to users_path, class:"btn btn-default btn-lg btn-block" do %>
                        <i class="glyphicon glyphicon-user"></i><span class="badge pull-right"></span> <%= current_user.name + " " + current_user.lastname %>
                     <% end %>
                 <% end %>
