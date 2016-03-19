@@ -108,9 +108,10 @@ thead {
     border-color: $text_fg!important;
 }
 body {
-    // background-image: image-url("klausi.jpg")!important;
+    background-image: image-url("Passbilder.jpg")!important;
     background-color: $bgc!important;
     }
+
 h1 {
     color: $text_fg!important;
 }
@@ -174,6 +175,18 @@ blockquote {
 //   background-color: $info_fg!important;
 //   border-color: $info_fg!important;
 // }
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    display: block;
+    height: auto;
+    line-height: 1;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.carousel-caption h1 {
+    color:yellow!important;
+}
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
