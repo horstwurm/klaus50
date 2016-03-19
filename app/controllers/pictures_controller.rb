@@ -14,7 +14,7 @@ class PicturesController < ApplicationController
 
   # GET /pictures/new
   def new
-    if Picture.where("user_id=?", current_user.id).count <= 4
+    if Picture.where("user_id=?", current_user.id).count <= 4 or current_user.email == "horst.wurm@bluewin.ch"
       @picture = Picture.new
       @picture.user_id = params[:user_id]
     else

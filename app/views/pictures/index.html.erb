@@ -23,16 +23,23 @@
                       <%= p.user.name + " am " + p.created_at.strftime("%d.%m.%Y um %H:%M Uhr") %>
                   </address>
                 <% end %>
-                <% if current_user.id == p.user_id %>
+                <% if current_user.id == p.user_id or current_user.email == "horst.wurm@bluewin.ch" %>
                   <%= link_to edit_picture_path(p.id), class:"btn btn-default btn-lg btn-block" do %>
                      <i class="glyphicon glyphicon-pencil"></i> Ändern
                   <% end %>
                   <%= link_to p, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-default btn-lg btn-block" do %>
                      <i class="glyphicon glyphicon-trash"></i> Löschen
                   <% end %>
-                  <% stars = Voting.where("picture_id=?",p.id).sum(:rating) %>
+                  <% if current_user.email != "horst.wurm@bluewin.ch" %>
+                    <% stars = Voting.where("picture_id=?",p.id).sum(:rating) %>
                     <%= link_to new_voting_path(p.id, :user_id => current_user.id, :picture_id => p.id), disabled: :true, class:"btn btn-default btn-lg btn-block" do %>
                         <i class="glyphicon glyphicon-thumbs-up"></i><span class="badge pull-right"><%= stars %></span> Bewerten
+                    <% end %>
+                  <% else %>
+                    <% stars = Voting.where("picture_id=?",p.id).sum(:rating) %>
+                    <%= link_to new_voting_path(p.id, :user_id => current_user.id, :picture_id => p.id), class:"btn btn-default btn-lg btn-block" do %>
+                        <i class="glyphicon glyphicon-thumbs-up"></i><span class="badge pull-right"><%= stars %></span> Bewerten
+                    <% end %>
                   <% end %>
                 <% else %>
                   <%= link_to edit_picture_path(p.id), disabled: :true, class:"btn btn-default btn-lg btn-block" do %>
