@@ -17,7 +17,7 @@
     	    <% if !p.image_file_name %>
                 <%= image_tag("ooops.jpg", class:"img-responsive img-rounded") %>
             <% else %>
-                <%= image_tag(p.image, size:"1920x1440", class:"img-rounded")  %>
+                <%= image_tag(p.image, size:"1920x1080", class:"img-rounded")  %>
             <% end %>
             <div class="carousel-caption">
                 <h1><%= p.user.name %> <em>"<%= p.comment %>"</em></h3>
