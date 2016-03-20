@@ -6,6 +6,7 @@
               <div class="jumbotron">
                 <%= image_tag("geburt.jpg", :size => "300x300", class:"img-rounded" ) %>
                 <h1>Willkommen zu Klaus wird 50 !</h1>
+                <p>Danke für's Mitmachen. Einfach anmelden, Bilder hochladen, Bilder bewerten. Die Bilder mit den meisten Bewertungen gewinnen tolle Preise!</p>
                 <% if user_signed_in? %>
                     <%= link_to diashow_show_path, class:"btn btn-default btn-lg btn-block" do %>
                        <i class="glyphicon glyphicon-facetime-video"></i> Diashow
